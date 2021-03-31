@@ -239,6 +239,12 @@ li {
   margin-left: 120px;
   color: var(--color-dark-white);
 }
+
+.brand__location .section__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 #map {
   width: 1000px;
   height: 500px;
