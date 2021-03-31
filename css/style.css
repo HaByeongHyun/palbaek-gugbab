@@ -82,6 +82,11 @@ li {
   margin-right: 24px;
 }
 
+.main__navbar a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
 .navbar__list {
   width: 100px;
   height: 60px;
@@ -196,7 +201,6 @@ li {
 
 .footer__navbar {
   background-color: var(--color-light-grey);
-  color: var(--color-white);
   height: 60px;
   line-height: 60px;
   margin-top: 50px;
@@ -209,7 +213,11 @@ li {
 
 .footer__list-navbar {
   font-size: var(--font-small);
-  cursor: pointer;
+}
+
+.footer__list a {
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 .contact {
