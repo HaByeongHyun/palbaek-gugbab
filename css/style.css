@@ -239,3 +239,7 @@ li {
   margin-left: 120px;
   color: var(--color-dark-white);
 }
+#map {
+  width: 1000px;
+  height: 500px;
+}
