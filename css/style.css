@@ -18,6 +18,9 @@
   --color-dark-orange: #f3b341;
   --color-black: #000000;
 
+  /* Font */
+  @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo&display=swap&subset=korean');
+
   /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
@@ -40,6 +43,13 @@
 body {
   margin: 0;
   cursor: default;
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 36px;
+  font-size: var(--font-regular);
 }
 
 li {
