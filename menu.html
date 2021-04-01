@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="css/brandmenu.css" />
     <script src="js/main.js"></script>
-    <title>팔백국밥 - 브랜드 소개</title>
+    <title>팔백국밥 - 메뉴 소개</title>
   </head>
   <body>
     <!-- Main -->
@@ -40,31 +40,65 @@
       </ul>
     </nav>
 
-    <!-- Section -->
-    <div class="brand__section">
-      <div class="section__container">
-        <h1>회사소개</h1>
-        <h2>CEO 인사말</h2>
-        <p>
-          고객님께 감사하고, 이웃과 함께하는 팔백국밥이 되겠습니다.<br />
-          우리 팔백국밥은 지속적인 변화와 메뉴 개발을 통해<br />
-          고객 여러분께 보다 많은, 보다 나은 즐거움과 감동의 가치를 전달하기
-          위한 노력을 해오고 있습니다.<br />
-          앞으로도 그동안의 성공 노하우를 바탕으로 팔백국밥만의 브랜드로,<br />
-          더욱 더 특별한 경쟁력으로 고객 여러분께 다가갈 것입니다.
-        </p>
+    <!-- Menu -->
+    <section class="menu">
+      <div class="menu__title">
+        <h1>팔백국밥 메뉴</h1>
+        <h2>BEST MENUS</h2>
       </div>
-    </div>
+      <ul class="menu__bar">
+        <li class="menu__bar-detail active">국밥(가정용)</li>
+        <li class="menu__bar-detail">국밥(업소용)</li>
+      </ul>
 
-    <!-- Location -->
-    <div class="brand__location">
       <div class="section__container">
-        <h1>오시는 길</h1>
-        <h2>DIRECTIONS</h2>
-        <div id="map"></div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>순대국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>돼지국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
+        <div class="menu__detail">
+          <img src="imgs/main-section.png" alt="palbaek Gukbab" />
+          <h1>모듬국밥</h1>
+          <h2>8,000원</h2>
+        </div>
       </div>
-    </div>
-
+    </section>
     <!--Footer -->
     <div class="footer__navbar">
       <ul class="footer__list">
@@ -89,43 +123,5 @@
         </div>
       </div>
     </footer>
-    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75ce11d61b1b304676d76b61d6086dba&libraries=services"></script>
-    <script>
-      const mapContainer = document.getElementById('map');
-      const mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3,
-      };
-
-      const map = new kakao.maps.Map(mapContainer, mapOption);
-
-      var zoomControl = new kakao.maps.ZoomControl();
-
-      map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-      const geocoder = new kakao.maps.services.Geocoder();
-
-      geocoder.addressSearch(
-        '대구 달성군 옥포읍 기세리 117',
-        (result, status) => {
-          if (status === kakao.maps.services.Status.OK) {
-            const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-            const marker = new kakao.maps.Marker({
-              map: map,
-              position: coords,
-            });
-
-            const infowindow = new kakao.maps.InfoWindow({
-              content:
-                '<div style="width:150px;text-align:center;padding:6px 0;"><a href="https://map.kakao.com/link/search/대구 달성군 옥포읍 기세리 117" style="text-decoration:none;">팔백국밥</a></div>',
-            });
-            infowindow.open(map, marker);
-
-            map.setCenter(coords);
-          }
-        }
-      );
-    </script>
   </body>
 </html>
