@@ -8,8 +8,8 @@
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
   --color-dark-grey: #4d4d4d;
-  --color-grey: #616161;
-  --color-light-grey: #7c7979;
+  --color-grey: #7c7979;
+  --color-light-grey: #b6b6b6;
   --color-blue: #73aace;
   --color-light-blue: #1e62df91;
   --color-dark-blue: #2b91f7;
@@ -123,7 +123,7 @@ li {
 .login__title {
   max-width: var(--maxSize-form);
   margin: auto;
-  border-bottom: 1px solid var(--color-wood);
+  border-bottom: 1px solid #b6b6b6;
 }
 
 .login__title h1 {
@@ -145,7 +145,7 @@ form {
   width: 100%;
   height: 36px;
   border: none;
-  border-bottom: solid 1px var(--color-wood);
+  border-bottom: solid 1px #b6b6b6;
   outline: none;
   padding: 0;
 }
@@ -198,6 +198,7 @@ input::placeholder {
 .login__social {
   max-width: var(--maxSize-form);
   margin: auto;
+  margin-bottom: 36px;
   display: flex;
 }
 
@@ -213,10 +214,19 @@ input::placeholder {
   width: 100%;
 }
 
-.join__form p {
-  color: var(--color-red);
+.join__section {
+  max-width: var(--maxSize-form);
+  margin: auto;
+}
+
+.join__form span {
   font-size: var(--font-small);
   font-weight: var(--weight-semi-bold);
+  color: var(--color-grey);
+}
+
+.join__form a {
+  margin-left: 36px;
 }
 
 /* Footer */
