@@ -1,0 +1,198 @@
+/* Global */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #7c7979;
+  --color-light-grey: #b6b6b6;
+  --color-blue: #73aace;
+  --color-light-blue: #1e62df91;
+  --color-dark-blue: #2b91f7;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-dark-orange: #f3b341;
+  --color-black: #000000;
+  --color-wood: #d2691e;
+  --color-red: #f74814;
+  --color-gold: #8c6239;
+
+  /* Font */
+  @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo&display=swap&subset=korean');
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+  --maxSize-form: 500px;
+
+  /* Annimation */
+  --annimation-duration: 300ms;
+}
+
+body {
+  margin: 0;
+  cursor: default;
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 36px;
+  font-size: var(--font-regular);
+}
+
+li {
+  list-style: none;
+}
+
+.main__login {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.main__login-btn,
+.main__join-btn {
+  border: none;
+  border-radius: var(--size-border-radius);
+  color: var(--color-dark-orange);
+  width: 100px;
+  height: 36px;
+  margin: 12px;
+  font-size: medium;
+  background-color: white;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main__logo {
+  width: 100px;
+  height: 80px;
+  margin-left: 24px;
+}
+
+.main__navbar {
+  display: flex;
+  margin-right: 24px;
+}
+
+.main__navbar a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.navbar__list {
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.navbar__list:hover {
+  background-color: var(--color-pink);
+  border-radius: var(--size-border-radius);
+  cursor: pointer;
+}
+
+/* Join */
+.join__container {
+  max-width: var(--maxSize-form);
+  margin: auto;
+  text-align: center;
+}
+
+.join__intro-title h3 {
+  color: var(--color-gold);
+}
+
+.join__btn {
+  font-size: var(--font-regular);
+  background-color: var(--color-red);
+  border: none;
+  border-radius: var(--size-border-radius);
+  width: 100%;
+  height: 48px;
+  color: var(--color-white);
+}
+
+.join__social {
+  display: flex;
+  flex-direction: column;
+}
+
+.join__btn-naver {
+  margin-bottom: 12px;
+  background-color: #1ec800;
+  color: #ffffff;
+  border: none;
+  height: 48px;
+}
+
+.join__btn-kakao {
+  background-color: #fee500;
+  border: none;
+  height: 48px;
+}
+
+/* Footer */
+
+.footer__navbar {
+  background-color: var(--color-light-grey);
+  height: 60px;
+  line-height: 60px;
+  margin-top: 50px;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer__list-navbar {
+  font-size: var(--font-small);
+}
+
+.footer__list a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.contact {
+  background-color: var(--color-dark-grey);
+}
+
+.contact .section__container {
+  display: flex;
+  align-items: center;
+}
+
+.contact__logo {
+  width: 200px;
+  height: 70px;
+  margin: 24px;
+}
+
+.contact__detail {
+  margin-left: 120px;
+  color: var(--color-dark-white);
+}
