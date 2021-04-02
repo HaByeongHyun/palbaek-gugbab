@@ -38,7 +38,7 @@
 
   /* Size */
   --size-border-radius: 4px;
-  --maxSize-form: 550px;
+  --maxSize-form: 500px;
 
   /* Annimation */
   --annimation-duration: 300ms;
@@ -167,6 +167,7 @@ form {
   font-size: var(--font-regular);
   background-color: var(--color-red);
   border: none;
+  border-radius: var(--size-border-radius);
   width: 100%;
   height: 48px;
   color: var(--color-white);
@@ -198,7 +199,6 @@ input::placeholder {
   max-width: var(--maxSize-form);
   margin: auto;
   display: flex;
-  align-items: center;
 }
 
 .login__social-container {
