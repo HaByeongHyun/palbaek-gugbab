@@ -18,6 +18,16 @@
     <link rel="stylesheet" href="css/login.css" />
 
     <title>팔백국밥 - 공지사항</title>
+    <script
+      type="text/javascript"
+      src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   </head>
   <body>
     <!-- Main -->
@@ -66,18 +76,29 @@
         </div>
       </form>
     </div>
-    <div class="login__section">
+    <div class="login__find">
       <a href="#">아이디/비밀번호 찾기</a>
     </div>
 
     <!-- 다른 서비스 계정 로그인 -->
+    <div class="login__social">
+      <div class="login__social-container">
+        <!-- 네이버아이디로로그인 버튼 노출 영역 -->
+        <div id="naver_id_login"></div>
+      </div>
+      <div class="login__social-container">
+        <!-- 카카오 로그인 버튼 노출 -->
+        <a id="custom-login-btn" href="javascript:loginWithKakao()">
+          <img
+            src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+            width="185"
+            height="40"
+          />
+        </a>
+        <p id="token-result"></p>
+      </div>
+    </div>
     <div class="login__section">
-      <div class="login__social">
-        <span class="login__social-naver">네이버 아이디로 로그인</span>
-      </div>
-      <div class="login__social">
-        <span class="login__social-kakao">카카오 아이디로 로그인</span>
-      </div>
       <div class="join__form">
         <p>아직 회원이 아니신가요?</p>
         <a href="#">회원가입</a>
@@ -90,8 +111,8 @@
         <a href="#"><li class="footer__list-navbar">이용약관</li></a>
         <a href="#"><li class="footer__list-navbar">개인정보처리방침</li></a>
         <a href="#"><li class="footer__list-navbar">법적고지</li></a>
-        <a href="#"
-          ><li class="footer__list-navbar">영상정보처리기기운영/관리</li></a
+        <a href="#">
+          <li class="footer__list-navbar">영상정보처리기기운영/관리</li></a
         >
       </ul>
     </div>
@@ -108,5 +129,50 @@
         </div>
       </div>
     </footer>
+    <!-- //네이버아이디로로그인 버튼 노출 영역 -->
+    <script type="text/javascript">
+      var naver_id_login = new naver_id_login(
+        'YOUR_CLIENT_ID',
+        'YOUR_CALLBACK_URL'
+      );
+      var state = naver_id_login.getUniqState();
+      naver_id_login.setButton('green', 3, 40);
+      naver_id_login.setDomain('YOUR_SERVICE_URL');
+      naver_id_login.setState(state);
+      naver_id_login.setPopup();
+      naver_id_login.init_naver_id_login();
+    </script>
+
+    <!-- 카카오 -->
+    <script>
+      Kakao.init('f95b8b22686119db24df37b11b56e08f');
+      console.log(Kakao.isInitialized());
+      function loginWithKakao() {
+        Kakao.Auth.authorize({
+          redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
+        });
+      }
+      // 아래는 데모를 위한 UI 코드입니다.
+      displayToken();
+      function displayToken() {
+        const token = getCookie('authorize-access-token');
+        if (token) {
+          Kakao.Auth.setAccessToken(token);
+          Kakao.Auth.getStatusInfo(({ status }) => {
+            if (status === 'connected') {
+              document.getElementById('token-result').innerText =
+                'login success. token: ' + Kakao.Auth.getAccessToken();
+            } else {
+              Kakao.Auth.setAccessToken(null);
+            }
+          });
+        }
+      }
+      function getCookie(name) {
+        const value = '; ' + document.cookie;
+        const parts = value.split('; ' + name + '=');
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+    </script>
   </body>
 </html>
